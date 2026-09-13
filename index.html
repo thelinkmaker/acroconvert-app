@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcroConvert - Ultimate PDF & Image Toolkit</title>
+    
+    <!-- SEO Improvement -->
+    <meta name="description" content="AcroConvert - The ultimate offline PDF and Image toolkit for Android. Convert, merge, split, and compress files privately on your device.">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --primary: #dc2626;
@@ -15,7 +20,6 @@
             --text-muted: #a1a1aa;
         }
 
-        /* FIX 1: Smooth scrolling for anchor links */
         html {
             scroll-behavior: smooth;
         }
@@ -42,16 +46,35 @@
             z-index: 100;
             border-bottom: 1px solid #27272a;
         }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
-        .logo span { color: white; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 20px; transition: 0.3s; }
-        .nav-links a:hover { color: white; }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none; /* Ensure logo isn't underlined if wrapped in anchor */
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
 
         .hero {
             text-align: center;
             padding: 100px 20px;
             background: radial-gradient(circle at center, #1a1a1e 0%, #0f0f11 70%);
         }
+
         .hero h1 {
             font-size: 3rem;
             font-weight: 800;
@@ -60,12 +83,14 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .hero p {
             font-size: 1.2rem;
             color: var(--text-muted);
             max-width: 600px;
             margin: 0 auto 40px;
         }
+
         .btn {
             display: inline-block;
             padding: 15px 35px;
@@ -79,22 +104,39 @@
             border: none;
             cursor: pointer;
         }
-        .btn:hover { background: var(--primary-hover); transform: translateY(-2px); }
+
+        .btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
         .btn-outline {
             background: transparent;
             border: 2px solid var(--primary);
             margin-left: 10px;
         }
-        .btn-outline:hover { background: var(--primary); }
 
-        /* FIX 2: Scroll margin prevents navbar from covering section title */
-        .features { 
-            padding: 100px 5% 80px; 
-            scroll-margin-top: 80px; 
+        .btn-outline:hover {
+            background: var(--primary);
         }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 10px; }
-        .section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 50px; }
-        
+
+        .features {
+            padding: 100px 5% 80px;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -102,6 +144,7 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+
         .card {
             background: var(--bg-card);
             padding: 30px;
@@ -109,10 +152,27 @@
             border: 1px solid #27272a;
             transition: 0.3s;
         }
-        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .card-icon { font-size: 2rem; margin-bottom: 15px; }
-        .card h3 { margin-bottom: 10px; font-size: 1.2rem; }
-        .card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        .card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: block; /* Ensures emoji sits nicely */
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
 
         .privacy {
             background: var(--bg-card);
@@ -121,15 +181,33 @@
             border-top: 1px solid #27272a;
             border-bottom: 1px solid #27272a;
         }
-        .privacy h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        .privacy p { color: var(--text-muted); max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
+
+        .privacy h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .privacy p {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
 
         .download {
             text-align: center;
             padding: 100px 20px;
         }
-        .download h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        .download p { color: var(--text-muted); margin-bottom: 30px; }
+
+        .download h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .download p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
 
         footer {
             text-align: center;
@@ -140,16 +218,28 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .nav-links { display: none; }
-            .btn-outline { margin-left: 0; margin-top: 15px; display: block; }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 15px;
+                display: block;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav>
         <div class="logo">Acro<span>Convert</span></div>
+
         <div class="nav-links">
             <a href="#features">Features</a>
             <a href="#privacy">Privacy</a>
@@ -159,43 +249,51 @@
 
     <section class="hero">
         <h1>The Ultimate PDF & Image Toolkit</h1>
-        <p>Convert, merge, split, and compress your files instantly. No ads, no servers, 100% private.</p>
+        <p>Convert, merge, split, and compress your files instantly. Fast, private, and easy to use.</p>
+
         <a href="#download" class="btn">Download APK</a>
         <a href="#features" class="btn btn-outline">View Features</a>
     </section>
 
     <section class="features" id="features">
         <h2 class="section-title">Powerful Tools</h2>
-        <p class="section-subtitle">Everything you need to manage your documents and images.</p>
-        
+        <p class="section-subtitle">
+            Everything you need to manage your documents and images.
+        </p>
+
         <div class="grid">
             <div class="card">
-                <div class="card-icon">🖼️ ➡️ </div>
+                <div class="card-icon" aria-hidden="true">🖼️ ➡️ 📄</div>
                 <h3>Images to PDF</h3>
                 <p>Convert JPG, PNG, and other image formats into high-quality PDF documents in seconds.</p>
             </div>
+
             <div class="card">
-                <div class="card-icon">📄 ➡️ 🖼️</div>
+                <div class="card-icon" aria-hidden="true">📄 ➡️ 🖼️</div>
                 <h3>PDF to Images</h3>
                 <p>Extract pages from your PDF files and save them as high-resolution images.</p>
             </div>
+
             <div class="card">
-                <div class="card-icon">🔀</div>
+                <div class="card-icon" aria-hidden="true">🔀</div>
                 <h3>Merge & Split</h3>
                 <p>Combine multiple PDFs into one, or extract specific pages to create a new file.</p>
             </div>
+
             <div class="card">
-                <div class="card-icon">🗜️</div>
+                <div class="card-icon" aria-hidden="true">🗜️</div>
                 <h3>Compress PDF</h3>
                 <p>Reduce the file size of your PDFs without losing quality. Perfect for email attachments.</p>
             </div>
+
             <div class="card">
-                <div class="card-icon"></div>
+                <div class="card-icon" aria-hidden="true">📷</div>
                 <h3>Scan to PDF</h3>
                 <p>Use your phone's camera to scan physical documents and turn them into digital PDFs.</p>
             </div>
+
             <div class="card">
-                <div class="card-icon">📐</div>
+                <div class="card-icon" aria-hidden="true">📐</div>
                 <h3>Resize & Convert</h3>
                 <p>Resize images and convert between different image formats effortlessly.</p>
             </div>
@@ -203,24 +301,50 @@
     </section>
 
     <section class="privacy" id="privacy">
-        <div style="font-size: 4rem; margin-bottom: 20px;">🛡️</div>
+        <div style="font-size: 4rem; margin-bottom: 20px;" aria-hidden="true">🛡️</div>
+
         <h2>100% Private & Secure</h2>
-        <p>Unlike other apps, AcroConvert performs <strong>all processing locally on your device</strong>. Your files are never uploaded to any external server. Your data stays exactly where it belongs: on your phone.</p>
+
+        <p>
+            Unlike other apps, AcroConvert performs
+            <strong>all processing locally on your device</strong>.
+            Your files are never uploaded to any external server.
+            Your data stays exactly where it belongs: on your phone.
+        </p>
     </section>
 
     <section class="download" id="download">
         <h2>Ready to get started?</h2>
-        <p>Download the latest version of AcroConvert for Android.</p>
-        
-        <!-- YOUR MEDIAFIRE LINK IS ALREADY ADDED HERE -->
-        <a href="https://github.com/thelinkmaker/acroconvert-app/releases/download/v1.0.0/AcroConvert.apk" class="btn" target="_blank">⬇️ Download AcroConvert APK</a>
-        
-        <p style="margin-top: 20px; font-size: 0.9rem;">Version 1.0.0 | Android 6.0+</p>
+
+        <p>
+            Download the latest version of AcroConvert for Android.
+        </p>
+
+        <!-- Security Fix: Added rel="noopener noreferrer" -->
+        <a href="https://github.com/thelinkmaker/acroconvert-app/releases/download/v1.0.0/AcroConvert.apk"
+           class="btn"
+           target="_blank"
+           rel="noopener noreferrer">
+            ⬇️ Download AcroConvert APK
+        </a>
+
+        <p style="margin-top: 20px; font-size: 0.9rem;">
+            Version 1.0.0 | Android 6.0+
+        </p>
     </section>
 
     <footer>
         <p>&copy; 2026 AcroConvert. All rights reserved.</p>
     </footer>
 
+    <!-- Monetag Full-Tab Ad (Moved to bottom for performance) -->
+    <script>
+        (function(s){
+            s.dataset.zone='11791761';
+            s.src='https://al5sm.com/tag.min.js';
+            s.async = true; // Ensure it doesn't block parsing
+        })(document.body.appendChild(document.createElement('script')));
+    </script>
+
 </body>
-</html>
+</html>a
